@@ -1,36 +1,36 @@
 // With proper loader configuration you can load,
 // pre-process and insert css directly with require().
-// See webpack.config.js for details.  
-require('./main.styl')
+// See webpack.config.js for details.
+var Vue = require('vue');
+var VueRouter = require('vue-router');
+Vue.use(VueRouter);
 
-var Vue = require('vue')
-var app = new Vue({
-  el: '#app',
-  data: {
-    view: 'page-a'
-  },
-  components: {
-    // define the main pages as async components.
-    'page-a': function (resolve) {
-      require(['./views/a'], resolve)
-    },
-    'page-b': function (resolve) {
-      require(['./views/b'], resolve)
-    }
-  }
+var Foo = Vue.extend({
+  template: '<p>This is foo!</p>'
 })
 
+var Bar = Vue.extend({
+  template: '<p>This is bar!</p>'
+})
+
+var App = Vue.extend({});
+
 /**
- * Some really crude routing logic here, just for
- * demonstration purposes. The key thing to note here is
- * that we are simply changing the view of the root app -
- * Vue's async components and Webpack's code splitting will
- * automatically handle all the lazy loading for us.
+ * router
  */
 
-function route () {
-  app.view = window.location.hash.slice(1) || 'page-a'
-}
+var router = new VueRouter()
 
-window.addEventListener('hashchange', route)
-window.addEventListener('load', route)
+router.map({
+  '/page-a': {
+    component: Foo
+  },
+  '/page-b': {
+    component: Bar
+  },
+  '*': {
+    component: Foo
+  },
+})
+
+router.start(App, '#app')

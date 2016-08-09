@@ -7,11 +7,11 @@
   <body>
     <div id="app">
       <div class="nav">
-        <a href="#page-a">Go to page A</a>
-        <a href="#page-b">Go to page B</a>
+		<a v-link="{ path: '/page-a' }">Go to Foo</a>
+        <a v-link="{ path: '/page-b' }">Go to Bar</a>
       </div>
-      <component is="{{view}}"></component>
+	  <router-view></router-view>
+	  <script src="build/build.js"></script>
     </div>
-    <script src="build/build.js"></script>
   </body>
 </html>

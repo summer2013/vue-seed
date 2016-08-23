@@ -4,11 +4,8 @@
 
 import Vue from "vue";
 import VueRouter from "vue-router";
+import List from "./views/list/list.vue";
 Vue.use(VueRouter);
-
-var List = Vue.extend({
-  template: '<p> 首页</p>'
-})
 
 var Activity = Vue.extend({
   template: '<p> 活动</p>'

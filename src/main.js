@@ -2,11 +2,12 @@
 // pre-process and insert css directly with require().
 // See webpack.config.js for details.
 
-import Vue from "vue";
 import VueRouter from "vue-router";
-import List from "./views/list/list.vue";
+import Vue from "vue";
+import List from "./views/list.vue";
 Vue.use(VueRouter);
 
+console.log('->', List);
 var Activity = Vue.extend({
   template: '<p> 活动</p>'
 })
@@ -53,7 +54,7 @@ var router = new VueRouter()
 
 router.map({
   '/list': {  // 首页活动列表
-	component: List
+    component: List
   },
   '/activity': { // 活动
     component: Activity,

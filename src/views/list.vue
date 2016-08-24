@@ -3,16 +3,18 @@
 </template>
 
 <script>
+console.log();
 export default {
   data () {
     return {
-      msg: 'Hello world!'
+      msg: 'Hello World!'
     }
   }
 }
+
 </script>
 
-<style>
+<style lang="scss">
 .example {
   color: red;
 }

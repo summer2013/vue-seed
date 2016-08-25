@@ -4,7 +4,7 @@ var APP_PATH = path.resolve(ROOT_PATH, 'app');
 
 
 module.exports = {
-  //devtool: 'eval-source-map', //启用source-map
+  devtool: 'eval-source-map', //启用source-map
 	entry: APP_PATH + '/main.js',
 	output: {
 		path: "./build",
@@ -28,11 +28,6 @@ module.exports = {
         loader: 'json'
       },
 			{
-				test: /\.scss$/,
-				loaders: 'vue-style!css!sass' //处理顺序由右到左
-				//loaders:['style', 'css?sourceMap', 'sass?sourceMap'] //处理顺序由右到左
-			},
-		  {
 				test: /\.html$/,
 				loader: 'vue-html'
 		  },
@@ -45,5 +40,10 @@ module.exports = {
 				}
 			}
 		]
-	}
+	},
+  vue: {
+    loaders: {
+      'scss': 'vue-style!css!sass'
+    }
+  }
 }

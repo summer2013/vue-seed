@@ -1,8 +1,8 @@
 {
-  "name": "vue-webpack-example",
+  "name": "vue-seed",
   "version": "1.0.0",
-  "description": "Vue project example using Webpack as the bundler.",
-  "main": "src/main.js",
+  "description": "vue seed project, to be continued",
+  "main": "app/main.js",
   "devDependencies": {
     "babel-core": "^6.13.2",
     "babel-loader": "^6.2.4",
@@ -31,14 +31,14 @@
   },
   "keywords": [
     "vue",
-    "webpack"
+    "webpack",
+    "es6",
+    "vue-router",
+    "sass"
   ],
-  "author": "Evan You",
+  "author": "summer",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/vuejs/vue-webpack-example/issues"
-  },
-  "homepage": "https://github.com/vuejs/vue-webpack-example",
+  "homepage": "https://github.com/summer2013/vue-seed",
   "dependencies": {
     "babel-runtime": "^6.11.6",
     "vue": "^0.12.10",

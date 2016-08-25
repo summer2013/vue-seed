@@ -1,13 +1,14 @@
 <template>
   <div class="example">{{ msg }}</div>
+  <router-view></router-view>
 </template>
 
 <script>
-console.log('detail');
+console.log('menu');
 export default {
   data () {
     return {
-      msg: '活动详情'
+      msg: '菜单'
     }
   }
 }
@@ -15,6 +16,6 @@ export default {
 
 <style scoped>
 .example {
-  color: blue;
+  color: green;
 }
 </style>

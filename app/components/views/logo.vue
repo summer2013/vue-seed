@@ -1,20 +1,20 @@
 <template>
   <div class="example">{{ msg }}</div>
-  <router-view></router-view>
 </template>
 
 <script>
+console.log('list');
 export default {
   data () {
     return {
-      msg: '活动'
+      msg: 'logo'
     }
   }
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .example {
-  color: green;
+  color: red;
 }
 </style>

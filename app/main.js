@@ -2,84 +2,35 @@
 // pre-process and insert css directly with require().
 // See webpack.config.js for details.
 
-import VueRouter from "vue-router";
-import Vue from "vue";
-import App from "./App.vue";
-import List from "./components/list.vue";
-import Activity from "./components/activity.vue";
-import Detail from "./components/detail.vue";
+import Vue from "vue"
+import VueRouter from "vue-router"
+import App from "./App.vue"
+import Logo from "./components/views/logo.vue"
+import Menus from "./components/views/menus.vue"
+import Menu from "./components/views/menu.vue"
+//import RegisterComponent from './components/register'
+
 Vue.use(VueRouter);
+//RegisterComponent.registerAllGlobalComponents();
 
-var Rule = Vue.extend({
-  template: '<p> 规则</p>'
-})
 
-var History = Vue.extend({
-  template: '<p> 往期回顾 </p>'
-})
-
-var SelectShop = Vue.extend({
-  template: '<p> 选择参加门店 </p>'
-})
-
-var Confirm = Vue.extend({
-  template: '<p> 报名信息确认 </p>'
-})
-
-var ConfirmSuccess = Vue.extend({
-  template: '<p> 报名信息确认成功 </p>'
-})
-
-var My = Vue.extend({
-  template: '<p> 我的活动 </p>'
-})
-
-var MyHistory = Vue.extend({
-  template: '<p> 我参加过的活动 </p>'
-})
-
-/**
- * router
- */
-
-var router = new VueRouter()
+const router = new VueRouter()
 
 router.map({
-  '/list': {  // 首页活动列表
-    component: List
+  '/logo': {
+    component: Logo
   },
-  '/activity': { // 活动
-    component: Activity,
-	subRoutes: {
-		'/detail': { // 活动详情
-			component: Detail
-		},
-		'/rule': { //  参加细则
-			component: Rule
-		},
-		'/history': { // 往期回顾
-			component: History
-		},
-		'/select-shop': { // 选择参加门店
-			component: SelectShop
-		},
-		'/confirm': { // 报名信息确认
-			component: Confirm
-		},
-		'/confirm-success': { //确认成功
-			component: ConfirmSuccess
-		},
+  '/menus': {
+    component: Menus,
+    subRoutes: {
+      '/menu': {
+        component: Menu
+      }
     },
   },
-  '/my': {  // 我的活动
-    component: My
-  },
-  '/my-history': {  // 我参加过的活动
-    component: MyHistory
-  },
   '*': {
-    component: List
-  },
+    component: Logo
+  }
 })
 
 router.start(App, '#app')

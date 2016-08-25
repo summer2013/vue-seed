@@ -91,3 +91,4 @@ router.map({
 })
 
 router.start(App, '#app')
+console.log('--',App);

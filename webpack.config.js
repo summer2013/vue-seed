@@ -1,11 +1,11 @@
 var path = require('path');
 var ROOT_PATH = path.resolve(__dirname);
-var APP_PATH = path.resolve(ROOT_PATH, 'src');
+var APP_PATH = path.resolve(ROOT_PATH, 'app');
 
 
 module.exports = {
 	devtool: 'eval-source-map', //启用source-map
-	entry: "./src/main.js",
+	entry: APP_PATH + '/main.js',
 	output: {
 		path: "./build",
 		publicPath: "/build/",
@@ -23,6 +23,10 @@ module.exports = {
 				test: /\.vue$/,
 				loader: 'vue'
 			},
+      {
+        test: /\.json$/,
+        loader: 'json'
+      },
 			{
 				test: /\.scss$/,
 				loaders:['style', 'css?sourceMap', 'sass?sourceMap'] //处理顺序由右到左
@@ -38,8 +42,7 @@ module.exports = {
 				query: {
 					presets: ['es2015']
 				}
-			},
-			{ test: /\.vue$/, loader: 'vue'}
+			}
 		]
 	}
 }

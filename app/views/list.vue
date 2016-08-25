@@ -3,7 +3,7 @@
 </template>
 
 <script>
-console.log();
+console.log(111);
 export default {
   data () {
     return {
@@ -11,7 +11,6 @@ export default {
     }
   }
 }
-
 </script>
 
 <style lang="scss">

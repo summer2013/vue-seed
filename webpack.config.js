@@ -1,7 +1,7 @@
 var path = require('path');
 var ROOT_PATH = path.resolve(__dirname);
 var APP_PATH = path.resolve(ROOT_PATH, 'app');
-
+var HtmlwebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   devtool: 'eval-source-map', //启用source-map
@@ -45,5 +45,11 @@ module.exports = {
     loaders: {
       'scss': 'vue-style!css!sass'
     }
-  }
+  },
+  plugins: [
+    new HtmlwebpackPlugin({
+      template: './app/main.html',
+      inject: 'body'
+    })
+  ]
 }

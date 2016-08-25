@@ -4,9 +4,10 @@
 
 import VueRouter from "vue-router";
 import Vue from "vue";
-import List from "./views/list.vue";
-import Activity from "./views/activity.vue";
-import Detail from "./views/detail.vue";
+import App from "./App.vue";
+import List from "./components/list.vue";
+import Activity from "./components/activity.vue";
+import Detail from "./components/detail.vue";
 Vue.use(VueRouter);
 
 var Rule = Vue.extend({
@@ -36,8 +37,6 @@ var My = Vue.extend({
 var MyHistory = Vue.extend({
   template: '<p> 我参加过的活动 </p>'
 })
-
-var App = Vue.extend({});
 
 /**
  * router

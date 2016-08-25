@@ -1,13 +1,13 @@
 <template>
   <div class="example">{{ msg }}</div>
+  <router-view></router-view>
 </template>
 
 <script>
-console.log('list');
 export default {
   data () {
     return {
-      msg: '活动列表'
+      msg: '活动'
     }
   }
 }
@@ -15,6 +15,6 @@ export default {
 
 <style scoped>
 .example {
-  color: red;
+  color: green;
 }
 </style>

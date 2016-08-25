@@ -5,16 +5,9 @@
 import VueRouter from "vue-router";
 import Vue from "vue";
 import List from "./views/list.vue";
+import Activity from "./views/activity.vue";
+import Detail from "./views/detail.vue";
 Vue.use(VueRouter);
-
-console.log('->', List);
-var Activity = Vue.extend({
-  template: '<p> 活动</p>'
-})
-
-var Detail = Vue.extend({
-  template: '<p> 详情 </p>'
-})
 
 var Rule = Vue.extend({
   template: '<p> 规则</p>'
@@ -91,4 +84,3 @@ router.map({
 })
 
 router.start(App, '#app')
-console.log('--',App);

@@ -3,11 +3,11 @@
 </template>
 
 <script>
-console.log('list');
+console.log('detail');
 export default {
   data () {
     return {
-      msg: '活动列表'
+      msg: '活动详情'
     }
   }
 }
@@ -15,6 +15,6 @@ export default {
 
 <style scoped>
 .example {
-  color: red;
+  color: blue;
 }
 </style>

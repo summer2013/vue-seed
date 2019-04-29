@@ -4,3 +4,5 @@ use vue、vue-router、es6、sass、vuex 、webpack;
 to be continued
 
 by shiny 2016-8-25
+
+hello world
